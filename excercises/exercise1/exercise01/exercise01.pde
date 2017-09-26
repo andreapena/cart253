@@ -12,6 +12,8 @@ final color BACKGROUND_COLOR = color(250, 100, 150);
 final color STROKE_COLOR = color(250, 150, 150);
 //outline of circle same as background so no outline visible
 final int CIRCLE_SIZE = 50;
+color bgColour = randomColour(0,255);
+// CHANGED::: randomized background colour and random colour matches the point where the mouse meets the ball
 
 int circleX;
 int circleY;
@@ -39,7 +41,7 @@ void setup() {
 
 void draw() {
     if (dist(mouseX, mouseY, circleX, circleY) < CIRCLE_SIZE/2) {
-    fill(CLICK_FILL_COLOR);
+    fill(bgColour);
     //is the location of the mouse is within the circumferenace of the circle, the circle goes blue
   }
   else {
@@ -62,10 +64,18 @@ void draw() {
     //if the position of the circle in the y axis including half of its radius is greater than the height ||= and/or.... 
     //if if the position of the circle in the y axis not including half of its radius is less than the height then..
     // the direction of the travelling circle in its y veolicty will be inversed .. ie go in the opposite direction
-  }
+  }  
 }
-
+// CHANGED::: randomized background colour
 void mousePressed() {
-  background(BACKGROUND_COLOR);
-  // when the mouse is pressed the backgound colour fills the screen
+bgColour = randomColour(0,255);
+  background(bgColour);
 }
+color randomColour(int low, int high) {
+  float r = random(low,high);
+  float g = random(low,high);
+  float b = random(low,high);
+  return color(r,g,b);
+}
+  //background(BACKGROUND_COLOR);
+  //// when the mouse is pressed the backgound colour fills the screen
