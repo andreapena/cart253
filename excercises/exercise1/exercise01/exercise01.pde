@@ -1,10 +1,13 @@
-final int CIRCLE_SPEED = 7;
+final int CIRCLE_SPEED = 4;
+// CHANGED slowed the ball down_was giving me a bit of a head ache
 // the distance in the x and y direction at which the cirtcle will more. giving the impression of velocity
-final color NO_CLICK_FILL_COLOR = color(250, 100, 100);
-// dark pink
+final color NO_CLICK_FILL_COLOR = color(208, 255, 5);
+// CHANGED the ball colour to neon yellow
+// dark pink colour of ball 
 final color CLICK_FILL_COLOR = color(100, 100, 250);
 //blue colour
-final color BACKGROUND_COLOR = color(250, 150, 150);
+final color BACKGROUND_COLOR = color(250, 100, 150);
+//CHANGED the colour background to fuscia
 // soft pink
 final color STROKE_COLOR = color(250, 150, 150);
 //outline of circle same as background so no outline visible
@@ -37,7 +40,7 @@ void setup() {
 void draw() {
     if (dist(mouseX, mouseY, circleX, circleY) < CIRCLE_SIZE/2) {
     fill(CLICK_FILL_COLOR);
-    //is the location of the mouse is within th circumferenace of the circle, the circle goes blue
+    //is the location of the mouse is within the circumferenace of the circle, the circle goes blue
   }
   else {
     fill(NO_CLICK_FILL_COLOR);
