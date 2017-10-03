@@ -19,7 +19,7 @@ int ballVX;
 int ballVY;
 int ballSpeed = 5;
 int ballSize = 16;
-color ballColor = color(255);
+color ballColor = color(100,50,200);
 
 void setup() {
   size(640, 480);
@@ -90,7 +90,7 @@ void drawBall() {
   fill(ballColor);
   rect(ballX, ballY, ballSize, ballSize);
 }
-// deifnes what happens when ball hits paddle...if the ball hits the paddle then the director of the ball in the y direction will be reversed
+// deifnes what happens when ball hits paddle...if the ball hits the paddle then the directon of the ball in the y direction will be reversed
 void handleBallHitPaddle() {
   if (ballOverlapsPaddle()) {
     ballY = paddleY - paddleHeight/2 - ballSize/2;
@@ -109,8 +109,10 @@ boolean ballOverlapsPaddle() {
 // if the ball passes the bottom then it reapears at mid height and mid width
 void handleBallOffBottom() {
   if (ballOffBottom()) {
-    ballX = width/2;
+//CHANGED
+    ballX = width/1;
     ballY = height/2;
+    ballColor = color(100,33,57);
   }
 }
 //
