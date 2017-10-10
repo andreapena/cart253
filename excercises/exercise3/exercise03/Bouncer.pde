@@ -45,11 +45,8 @@ class Bouncer {
    } else if (y > height)
      y -= height;
    }
-//    
    //x = constrain(x,size/2,width-size/2);
    //y = constrain(y,size/2,height-size/2);
-   
-   
  //}
 //  when that mouse is inside the dimension of the bouncer it calls to fill color for the hover colour
  void handleMouse() {
@@ -61,6 +58,7 @@ class Bouncer {
      fillColor = defaultColor;
    }
  }
+
  // draws the function properties
  void draw() {
    noStroke();
