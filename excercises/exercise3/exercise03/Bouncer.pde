@@ -31,19 +31,27 @@ class Bouncer {
    handleMouse();
  }
  // defines handlebounce as to reverse the velocity of x when the bouncer hits the width (side to side)
+ // CHANGED
  void handleBounce() {
-   if (x - size/2 < 0 || x + size/2 > width) {
-    vx = -vx; 
+   if (x < 0) {
+     x += width;
+   } else if (x > width) {
+    x -= width;
    }
+ // CHANGED
  // defines handlebounce as to reverse the velocity of y when the bouncer hits the height (top and bottom)
-   if (y - size/2 < 0 || y + size/2 > height) {
-     vy = -vy;
+   if (y < 0){
+     y += height;
+   } else if (y > height)
+     y -= height;
    }
 //    
-   x = constrain(x,size/2,width-size/2);
-   y = constrain(y,size/2,height-size/2);
- }
-//  when thta mouse is inside the dimension of the bouncer it calls to fill color for the hover colour
+   //x = constrain(x,size/2,width-size/2);
+   //y = constrain(y,size/2,height-size/2);
+   
+   
+ //}
+//  when that mouse is inside the dimension of the bouncer it calls to fill color for the hover colour
  void handleMouse() {
    if (dist(mouseX,mouseY,x,y) < size/2) {
     fillColor = hoverColor; 

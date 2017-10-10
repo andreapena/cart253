@@ -8,9 +8,9 @@ void setup() {
   // size of bouncers
   size(640,480);
   background(backgroundColor);
-  // defines the x,y,colour 1 and colour 2 of B1 and B2
-  bouncer = new Bouncer(width/2,height/2,2,2,50,color(150,0,0,50),color(255,0,0,50));
-  bouncer2 = new Bouncer(width/2,height/2,-2,2,50,color(0,0,150,50),color(0,0,255,50));
+  // defines the x,y,colour 1 and colour 2 of B1 and B2 specifically 
+  bouncer = new Bouncer(width/3,height/4,2,2,50,color(150,0,0,50),color(255,0,0,50));
+  bouncer2 = new Bouncer(2*width/3,height/2,-2,2,50,color(0,0,150,50),color(0,0,255,50));
 }
 //re_draws B1 and B2 each frame and calls the function by draw
 void draw() {
