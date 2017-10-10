@@ -1,5 +1,6 @@
+// defines all the variables of the bouncers
 class Bouncer {
-  
+  // properties of the class
  int x;
  int y;
  int vx;
@@ -9,6 +10,7 @@ class Bouncer {
  color defaultColor;
  color hoverColor;
  
+ // defines the veolcity, colour, shape, fill, while indicating temp allows for two different objcest to swap between variables 
  Bouncer(int tempX, int tempY, int tempVX, int tempVY, int tempSize, color tempDefaultColor, color tempHoverColor) {
    x = tempX;
    y = tempY;
@@ -19,37 +21,39 @@ class Bouncer {
    hoverColor = tempHoverColor;
    fillColor = defaultColor;
  }
- 
+ // movement of the ball in x and y axis
+ // 
  void update() {
    x += vx;
    y += vy;
-   
+   // constructor for handlebounce/handlemouse
    handleBounce();
    handleMouse();
  }
- 
+ // defines handlebounce as to reverse the velocity of x when the bouncer hits the width (side to side)
  void handleBounce() {
    if (x - size/2 < 0 || x + size/2 > width) {
     vx = -vx; 
    }
-   
+ // defines handlebounce as to reverse the velocity of y when the bouncer hits the height (top and bottom)
    if (y - size/2 < 0 || y + size/2 > height) {
      vy = -vy;
    }
-   
+//    
    x = constrain(x,size/2,width-size/2);
    y = constrain(y,size/2,height-size/2);
  }
- 
+//  when thta mouse is inside the dimension of the bouncer it calls to fill color for the hover colour
  void handleMouse() {
    if (dist(mouseX,mouseY,x,y) < size/2) {
     fillColor = hoverColor; 
    }
+   // if not then the colour stays as default
    else {
      fillColor = defaultColor;
    }
  }
- 
+ // draws the function properties
  void draw() {
    noStroke();
    fill(fillColor);
